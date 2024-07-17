@@ -53,7 +53,7 @@
   border: 1px solid rgba(var(--card-border-rgb), 0);
   transition: background 200ms, border 200ms;
   display: flex;
-  height: 335px;
+  min-height: 335px;
   margin: 5px 0px;
 }
 
@@ -241,7 +241,7 @@
 }
 
 .cardImage {
-  width: auto;
+  width: 300px;
   height: 200px;
   object-fit: cover;
   border-radius: var(--border-radius);
@@ -254,5 +254,22 @@
 }
 
 .cardContent p {
-  display: unset;;
+  display: unset;
+}
+
+.modal {
+	display: flex;
+	justify-content: space-evenly;
+	box-shadow: rgba(100, 100, 111, 0.3) 0px 7px 29px 0px;
+	background-color: rgb(128, 128, 128);
+	border: 2px solid rgb(240, 240, 240);
+	border-radius: 12px;
+	position: fixed;
+	width: 500px;
+	top: 15%;
+	left: calc(50% - 250px);
+  z-index: 10;
+  padding-top: 1rem;
+  overflow-y: auto;
+  max-height: 500px;
 }
