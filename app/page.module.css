@@ -49,19 +49,26 @@
 .card {
   padding: 1rem 1.2rem;
   border-radius: var(--border-radius);
-  background: rgba(var(--card-rgb), 0);
+  background: rgba(var(--card-rgb), 0.25);
   border: 1px solid rgba(var(--card-border-rgb), 0);
   transition: background 200ms, border 200ms;
+  display: flex;
+  height: 335px;
+  margin: 5px 0px;
 }
 
 .card span {
-  display: inline-block;
+  display: flex;
   transition: transform 200ms;
+  flex: 0 1 auto;
+  margin-left: auto;
+  margin-right: 20%;
 }
 
 .card h2 {
   font-weight: 600;
   margin-bottom: 0.7rem;
+  display: flex;
 }
 
 .card p {
@@ -111,7 +118,7 @@
 /* Enable hover only on non-touch devices */
 @media (hover: hover) and (pointer: fine) {
   .card:hover {
-    background: rgba(var(--card-rgb), 0.1);
+    background: rgba(var(--card-rgb), 0.5);
     border: 1px solid rgba(var(--card-border-rgb), 0.15);
   }
 
@@ -227,4 +234,25 @@
   to {
     transform: rotate(0deg);
   }
+}
+
+.cardReleaseDate::before {
+  content: "Release Date: ";
+}
+
+.cardImage {
+  width: auto;
+  height: 200px;
+  object-fit: cover;
+  border-radius: var(--border-radius);
+}
+
+.cardContent {
+  padding: 1rem;
+  padding-left: 2.5rem;
+  width: 100%;
+}
+
+.cardContent p {
+  display: unset;;
 }
