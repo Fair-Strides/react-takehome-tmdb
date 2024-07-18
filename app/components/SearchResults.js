@@ -32,15 +32,17 @@ function SearchResults({ query }) {
   if (query !== null) {
     searchQuery = query ? query : "__";
   }
-  const { data, error } = useSWR(`api/search/${searchQuery}`, fetcher);
+  const { data, error } = useSWR(
+    `${process.env.NEXT_PUBLIC_DJANGO_API_URL}/search/title=${searchQuery}`,
+    fetcher
+  );
 
   if (data) {
-    if (data.data.results) results = data.data.results;
+    if (data.results) results = data.results;
   } else if (error) {
     console.error("Error fetching search results:", error);
   }
 
-  console.log("SearchResults: ", movieId);
   return (
     <div className={styles.searchListContainer}>
       <>
