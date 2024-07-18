@@ -1,4 +1,3 @@
-import Image from "next/image";
 import { SearchBar } from "./components/SearchBar.js";
 import styles from "./page.module.css";
 
